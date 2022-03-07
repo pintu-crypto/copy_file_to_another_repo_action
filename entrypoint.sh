@@ -69,7 +69,7 @@ then
     echo "Git push succeeded"
   elif [ $((INPUT_RETRY_ATTEMPTS)) -gt 0 ]; then
     echo "Retrying git push"
-    for index in $(seq 0 $INPUT_RETRY_ATTEMPTS); do
+    for index in $(seq 1 $INPUT_RETRY_ATTEMPTS); do
       sleep 2s
       git fetch
       git rebase
