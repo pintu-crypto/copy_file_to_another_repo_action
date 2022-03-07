@@ -74,6 +74,7 @@ then
       git fetch
       git rebase
       if git push; then
+        echo "Git push succeeded"
         exit 0;
       fi
     done
