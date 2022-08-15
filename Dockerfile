@@ -1,4 +1,4 @@
-FROM mirror.gcr.io/library/alpine:3.15
+FROM mirror.gcr.io/library/alpine
 
 RUN apk update && \
     apk upgrade && \
