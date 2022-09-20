@@ -1,4 +1,4 @@
-FROM mirror.gcr.io/library/alpine
+FROM alpine
 
 RUN apk update && \
     apk upgrade && \
