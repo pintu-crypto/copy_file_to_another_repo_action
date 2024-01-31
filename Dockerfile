@@ -1,4 +1,4 @@
-FROM 817655935426.dkr.ecr.ap-southeast-1.amazonaws.com/alpine
+FROM public.ecr.aws/docker/library/alpine:latest
 
 RUN apk update && \
     apk upgrade && \
