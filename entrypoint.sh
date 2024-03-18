@@ -79,6 +79,7 @@ then
       fi
     done
     echo "Can not push changes to $OUTPUT_BRANCH after retrying $INPUT_RETRY_ATTEMPTS attempts"
+    exit 1
   fi
 else
   echo "No changes detected"
