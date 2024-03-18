@@ -71,17 +71,15 @@ then
     echo "Retrying git push"
     for index in $(seq 1 $INPUT_RETRY_ATTEMPTS); do
       sleep 2s
-      set -e
-      git fetch && git rebase && git push
-      if [ $? -eq 0 ]
-      then
-        set +e
+      git fetch
+      git rebase
+      if git push; then
         echo "Git push succeeded"
         exit 0;
       fi
-      set +e
     done
     echo "Can not push changes to $OUTPUT_BRANCH after retrying $INPUT_RETRY_ATTEMPTS attempts"
+    exit 1
   fi
 else
   echo "No changes detected"
