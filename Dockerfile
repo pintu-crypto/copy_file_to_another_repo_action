@@ -1,8 +1,6 @@
 FROM public.ecr.aws/docker/library/alpine:latest
 
-RUN apk update && \
-    apk upgrade && \
-    apk add git rsync
+RUN apk add --no-cache --upgrade git rsync
 
 ADD entrypoint.sh /entrypoint.sh
 
